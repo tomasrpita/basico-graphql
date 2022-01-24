@@ -1,5 +1,8 @@
 'user strict'
 
+// Carga el archivo de configuración .env en process.env
+require('dotenv').config()
+
 // ahora sera grambiado por graphql-tools
 // const { buildSchema } = require('graphql')
 const { makeExecutableSchema } = require('graphql-tools')
