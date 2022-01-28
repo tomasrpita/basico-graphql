@@ -5,7 +5,7 @@ require('dotenv').config()
 
 // ahora sera grambiado por graphql-tools
 // const { buildSchema } = require('graphql')
-const { makeExecutableSchema } = require('graphql-tools')
+const { makeExecutableSchema } = require('@graphql-tools/schema')
 
 const express = require('express')
 const { graphqlHTTP } = require('express-graphql')
