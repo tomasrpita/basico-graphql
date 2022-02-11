@@ -5,12 +5,14 @@ enum Level {
 	avanzado
 }
 
+union GlobalSearch = Course | Student | Monitor
+
 type Course {
 	_id: ID!
 	title: String!
 	teacher: String
 	description: String!
-	topic: String
+	topic: String @deprecated
 	people: [Student]
 	level: Level
 }
@@ -45,6 +47,8 @@ type Query {
 	getPeople: [Person]
 	"Devuelve un estudiante por id"
 	getPerson(id: ID!): Person
+	"Ejecuta una busqueda Global"
+	searchItems(keyword: String!): [GlobalSearch]
 }
 
 input CourseInput {
@@ -73,8 +77,8 @@ input PersonInput {
 
 input PersonEditInput {
 	name: String
-	email: String
 	phone: String
+	email: String
 	avatar: String
 }
 
